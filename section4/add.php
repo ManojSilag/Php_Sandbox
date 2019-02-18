@@ -1,6 +1,6 @@
 <?php 
 
-   // print_r($_GET);
+  // print_r($_GET);
   // if(isset($_GET['submit'])){
   // 	echo $_GET['email'];
   // 	echo $_GET['title'];
@@ -8,9 +8,10 @@
   // }
 
   if(isset($_POST['submit'])){
-  	echo $_POST['email'];
-  	echo $_POST['title'];
-  	echo $_POST['intgredients'];
+  	echo htmlspecialchars($_POST['email']);
+  	echo htmlspecialchars($_POST['title']);
+  	echo htmlspecialchars($_POST['intgredients']);
+
   }
 
  ?>
