@@ -49,9 +49,18 @@ $errors= array('email'=>'', 'title'=>'', 'intgredients'=>'');
 		}
 	}
 
-
+     if(array_filter($errors)){
+     	//echo 'errors in the form';
+     } else{
+     	//echo "form is valid";
+     	header('Location: index.php');
+     }
 
   } //end of post check
+
+
+
+
 
  ?>
 
