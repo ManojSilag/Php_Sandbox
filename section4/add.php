@@ -7,6 +7,8 @@
   // 	echo $_GET['intgredients'];
   // }
 
+include('config/db_connect.php');
+
 $errors= array('email'=>'', 'title'=>'', 'intgredients'=>'');
 
    $email = $title = $intgredients ='';
@@ -52,8 +54,17 @@ $errors= array('email'=>'', 'title'=>'', 'intgredients'=>'');
      if(array_filter($errors)){
      	//echo 'errors in the form';
      } else{
+
+        //protecting server from sqlinjection
+     	$email = mysql_real_escape_string($conn,  $_POST['email'] );
+     	$title = mysql_real_escape_string($conn,  $_POST['title'] );
+     	$intgredients = mysql_real_escape_string($conn,  $_POST['intgredients'] );
+
+
+
      	//echo "form is valid";
      	header('Location: index.php');
+
      }
 
   } //end of post check
