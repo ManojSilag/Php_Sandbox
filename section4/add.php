@@ -56,9 +56,23 @@ $errors= array('email'=>'', 'title'=>'', 'intgredients'=>'');
      } else{
 
         //protecting server from sqlinjection
-     	$email = mysql_real_escape_string($conn,  $_POST['email'] );
-     	$title = mysql_real_escape_string($conn,  $_POST['title'] );
-     	$intgredients = mysql_real_escape_string($conn,  $_POST['intgredients'] );
+     	$email = mysqli_real_escape_string($conn,  $_POST['email'] );
+     	$title = mysqli_real_escape_string($conn,  $_POST['title'] );
+     	$intgredients = mysqli_real_escape_string($conn,  $_POST['intgredients'] );
+           
+
+           //create sql
+     	  $sql = "INSERT INTO pizzas(title,email,intgredients) VALUES ('$title', '$email', '$intgredients')";
+
+     	  //save to db and check
+     	  if(mysqli_query($conn, $sql)){
+     	  	// success
+     	  	header('Location: index.php');
+     	 
+     	  }else{
+     	  	//error
+     	  	echo 'query error: ' . mysqli_error($conn);
+     	  }
 
 
 
