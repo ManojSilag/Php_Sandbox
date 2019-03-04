@@ -30,8 +30,6 @@
   //the explode function
   //print_r(explode(',', $pizzas[0]['intgredients']));
 
-
-
  ?>
 
  <!DOCTYPE html>
@@ -57,18 +55,15 @@
  						</ul>
  					</div>
  					<div class="card-action right-align">
- 						<a class="brand-text" href="#">more info</a>
+ 						<a class="brand-text" href="details.php?id=<?php echo $pizza['id'] ?>">more info</a>
  					</div>
  				</div>
  			</div>
-
 
  		<?php endforeach; ?>
  	</div>
  </div>
 
-
  <?php include('templates/footer.php') ?>
-
 
  </html>
