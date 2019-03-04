@@ -30,6 +30,8 @@
   //the explode function
   //print_r(explode(',', $pizzas[0]['intgredients']));
 
+
+
  ?>
 
  <!DOCTYPE html>
@@ -60,10 +62,13 @@
  				</div>
  			</div>
 
+
  		<?php endforeach; ?>
  	</div>
  </div>
 
+
  <?php include('templates/footer.php') ?>
+
 
  </html>
